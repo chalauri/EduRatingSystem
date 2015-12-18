@@ -15,15 +15,6 @@ public class UserResource {
 	private HttpServletRequest request;
 
 	private static final String USER_DATA = "data";
-
-	@GET
-	@Path("/sayHello")
-	@Produces("application/json")
-	public String sayHello() {
-
-		return "Hello, I am Giga";
-	}
-
 	@GET
 	@Path("/getUser")
 	@Produces("application/json")
