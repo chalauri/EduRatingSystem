@@ -1,4 +1,4 @@
-package main.java;
+package main.java.users;
 
 import java.io.Serializable;
 
@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
+@Entity(name="main.java.users.User")
 @Table(name = "USERS")
 public class User implements Serializable {
 
