@@ -1,26 +1,42 @@
-<html>
-  <head>
-    <title>Sample "Hello, World" Application</title>
-  </head>
-  <body bgcolor=white>
+<!DOCTYPE html>
+<!-- saved from url=(0046)index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+<meta charset="utf-8">
+    <!-- CSS (load bootstrap) -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Edu rating</title>
+    <link rel="shortcut icon" href="images_title_logo.png">
+    <link rel="stylesheet" href="app.css">
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+    <script src="angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+</head>
 
-    <table border="0" cellpadding="10">
-      <tr>
-        <td>
-          <img src="images/springsource.png">
-        </td>
-        <td>
-          <h1>Sample "Hello, World" Application</h1>
-        </td>
-      </tr>
-    </table>
+<!-- apply our angular app to our site -->
+<body ng-app="routerApp" class="ng-scope">
 
-    <p>This is the home page for the HelloWorld Web application. </p>
-    <p>To prove that they work, you can execute either of the following links:
-    <ul>
-      <li>To a <a href="hello.jsp">JSP page</a>.
-      <li>To a <a href="hello">servlet</a>.
+<!-- NAVIGATION -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="rating">რეიტინგი</a>
+    </div>
+    <ul class="nav navbar-nav m-l-md">
+        <li><a ui-sref="registration">რეგისტრაცია</a></li>
+        <li><a ui-sref="evaluation"> შეფასება </a></li>
     </ul>
+</nav>
 
-  </body>
-</html>
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <!-- ui-view-anchor --><div ui-view=""></div>
+
+</div>
+
+
+
+</body></html>
