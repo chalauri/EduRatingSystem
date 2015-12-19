@@ -5,11 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import main.java.libraries.University;
 
 @Entity(name = "main.java.specialities.Speciality")
 @Table(name = "SPECIALITIES")
@@ -21,9 +17,9 @@ public class Speciality implements Serializable {
 	@Column(name = "SPECIALITY_ID")
 	private Integer specialityId;
 
-	@ManyToOne
-	@JoinColumn(name = "UNIVERSITY_ID")
-	private University university;
+
+	@Column(name = "UNIVERSITY_ID")
+	private Integer universityId;
 
 	@Column(name = "NAME")
 	private String name;
@@ -39,12 +35,12 @@ public class Speciality implements Serializable {
 		this.specialityId = specialityId;
 	}
 
-	public University getUniversity() {
-		return university;
+	public Integer getUniversityId() {
+		return universityId;
 	}
 
-	public void setUniversity(University university) {
-		this.university = university;
+	public void setUniversityId(Integer universityId) {
+		this.universityId = universityId;
 	}
 
 	public String getName() {
@@ -62,5 +58,7 @@ public class Speciality implements Serializable {
 	public void setState(Integer state) {
 		this.state = state;
 	}
+
+	
 
 }
