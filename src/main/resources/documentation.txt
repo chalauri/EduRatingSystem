@@ -1,0 +1,10 @@
+1) უნივერსიტეტების გამოტანა
+http://localhost:8080/rest/libraries/universities/list
+
+2) კატეგორიების გამოტანა
+http://localhost:8080/rest/libraries/category/list
+
+3) კითხვების გამოტანა
+http://localhost:8080/rest/questions/list
+
+თითოეულ კითხვას answers ველში აქვს სავარაუდო პასუხები

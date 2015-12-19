@@ -1,4 +1,4 @@
-package main.java.answers;
+package main.java.questions;
 
 import java.io.Serializable;
 
@@ -9,9 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import main.java.questions.Question;
-
-@Entity(name = "main.java.answers.Answer")
+@Entity(name = "main.java.questions.Answer")
 @Table(name = "ANSWERS")
 public class Answer implements Serializable {
 
@@ -21,9 +19,8 @@ public class Answer implements Serializable {
 	@Column(name = "ANSWER_ID")
 	private Integer answerId;
 
-	@ManyToOne
-	@JoinColumn(name = "QUESTION_ID")
-	private Question question;
+	@Column(name = "QUESTION_ID")
+	private Integer questionId;
 
 	@Column(name = "ANSWER")
 	private String answer;
@@ -42,12 +39,12 @@ public class Answer implements Serializable {
 		this.answerId = answerId;
 	}
 
-	public Question getQuestion() {
-		return question;
+	public Integer getQuestionId() {
+		return questionId;
 	}
 
-	public void setQuestion(Question question) {
-		this.question = question;
+	public void setQuestionId(Integer questionId) {
+		this.questionId = questionId;
 	}
 
 	public String getAnswer() {

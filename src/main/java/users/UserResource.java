@@ -15,6 +15,7 @@ public class UserResource {
 	private HttpServletRequest request;
 
 	private static final String USER_DATA = "data";
+	
 	@GET
 	@Path("/getUser")
 	@Produces("application/json")

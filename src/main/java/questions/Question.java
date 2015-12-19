@@ -1,11 +1,13 @@
 package main.java.questions;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity(name = "main.java.questions.Question")
 @Table(name = "QUESTIONS")
@@ -25,6 +27,9 @@ public class Question implements Serializable {
 
 	@Column(name = "STATE")
 	private Integer state;
+
+	@Transient
+	private List<Answer> answers;
 
 	public Integer getQuestionId() {
 		return questionId;
@@ -56,6 +61,14 @@ public class Question implements Serializable {
 
 	public void setState(Integer state) {
 		this.state = state;
+	}
+
+	public List<Answer> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
 	}
 
 }
