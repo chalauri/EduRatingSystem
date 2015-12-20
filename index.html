@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)index.html -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-ui-router.min.js"></script>
+    <script src="scripts/ocLazyLoad.min.js"></script>
+    <script src="scripts/Chart.min.js"></script>
+    <script src="scripts/angular-chart.min.js"></script>
+    <script src="scripts/select.min.js"></script>
+    <title>Edu rating</title>
+
+
+    <!-- <link rel="shortcut icon" href="images_title_logo.png">-->
+    <!-- CSS (load bootstrap) -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/angular-chart.min.css">
+     <link rel="stylesheet" href="css/select.min.css">
+
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/routes.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <style>
+        .navbar {
+            border-radius: 0;
+        }
+    </style>
+</head>
+
+<!-- apply our angular app to our site -->
+
+<body ng-app="EduRate" class="ng-scope" ng-controller="appBodyCtrl as _body">
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="ratingSummary">უნივერსიტეტების  რეიტინგი</a>
+        </div>
+        <ul class="nav  navbar-nav">
+            <li><a  ui-sref="rateUni">შეფასება</a></li>
+            
+            <!-- 
+                 <li><a class="btn btn-default btn-sm pull-right m-t-sm m-r-sm" ui-sref="register"> register </a></li>
+                 <li><a class="btn btn-default btn-sm pull-right m-t-sm m-r-sm" ui-sref="logIn">log in</a></li>
+             -->
+            
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="col-lg-12 no-padder m-lr-sm">
+
+        <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+        <!-- ui-view-anchor -->
+        <div ui-view=""></div>
+
+    </div>
+
+
+
+</body>
+
+</html>

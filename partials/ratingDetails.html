@@ -1,0 +1,76 @@
+<div class="col-md-12">
+  <div class="panel panel-info">
+    <div class="panel-heading">{{ _ratingDetail.university.fullName}}</div>
+    <div class="panel-body">
+      <div class="col-md-4">
+        <a href="#" class="thumbnail">
+          <img width="300" height="300" ng-src='images/{{_ratingDetail.university.keyName}}.png' alt="...">
+        </a>
+      </div>
+      <div class="col-md-8">
+        <table>
+          <tr>
+            <td>
+              <div class="bold">სახელი:</div>
+            </td>
+            <td>
+              <div class="bold">{{_ratingDetail.university.fullName}}</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="bold">ვებ-გვერდი:</div>
+            </td>
+            <td>
+              <a class="btn btn-link" href="http://{{ _ratingDetail.university.webpage}}"> {{ _ratingDetail.university.webpage}} </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">უნივერსიტეტის შეფასებები მიმართულებების მიხედვით</div>
+      <div class="panel-body">
+        <div ng-repeat="direc in _ratingDetail.university.categories">
+          <div class="col-md-6">
+            <div class="panel panel-info">
+              <div class="panel-heading">{{direc.name}}</div>
+              <div class="panel-body">
+                <div class="col-md-4">
+                  <a href="#" class="thumbnail">
+                    <img width="300" height="300" ng-src='images/{{direc.keyName}}.png' alt="...">
+                  </a>
+                </div>
+                <div class="col-md-8">
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="bold">მიმართულების სახელი : </div>
+                      </td>
+                      <td>
+                        <div class=""> {{direc.name}}</div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div ng-repeat="rating in direc.ratings" class="col-md-12 {{rating.cssClass}}">
+                  <label>{{ rating.name}}</label>
+
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{ rating.ratingPercent}}" aria-valuemin="0"
+                    aria-valuemax="100" style="width:{{ rating.ratingPercent}}%">
+                      {{ rating.ratingPercent}}%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

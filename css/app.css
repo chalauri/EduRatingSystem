@@ -1,0 +1,47 @@
+
+
+.m-l-md{
+	margin-left: 20px;
+}
+.m-t-sm {
+	margin-top:5px;
+}
+.m-t-md {
+	margin-top:20px;
+}
+.m-r-sm {
+	margin-right:5px;
+}
+
+.no-padder{
+	padding:20px;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.star-rating {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.star-rating .star {
+  padding: 1px;
+  color: #ddd;
+  font-size: 20px;
+  text-shadow: .05em .05em #aaa;
+  list-style-type: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.star-rating .star.filled {
+  color: #fd0;
+}
+.star-rating.readonly .star.filled {
+  color: #666;
+}
+
+i.fa.fa-star {
+    font-size: 50px;
+}
