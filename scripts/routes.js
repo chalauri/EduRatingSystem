@@ -1,6 +1,6 @@
 
 EduRate.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/rating');
+    $urlRouterProvider.otherwise('/rating-summary');
 
     $stateProvider
         .state('ratingSummary', {
