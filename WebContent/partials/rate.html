@@ -1,0 +1,45 @@
+<div ng-controller="EvaluationCtrl as _totalRate" class="container">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="col-md-12">
+      <label class="h3">1. ამოირჩიეთ უნივერსიტეტი</label>
+    </div>
+    <div class="col-md-12">
+      <ui-select ng-model="university.selected" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
+        <ui-select-match placeholder="select university">{{$select.selected.fullName}}</ui-select-match>
+        <ui-select-choices repeat="university in _totalRate.universities | propsFilter: {fullName: $select.search}"
+                         refresh="_totalRate.loadSpecialities($select.selected.id)"
+        >
+          <div ng-bind-html="_totalRate.trustAsHtml((university.fullName | highlight: $select.search)) "></div>
+         
+        </ui-select-choices>
+      </ui-select>
+    </div>
+    <div class="col-md-12">
+      <label class="h3"> 2. ამოირჩიეთ სპეციალობა</label>
+    </div>
+    <div class="col-md-12">
+      <ui-select ng-model="speciality.selected" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
+        <ui-select-match placeholder="select speciality">{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices repeat="speciality in _totalRate.specialities | propsFilter: {name: $select.search}" 
+                           refresh="_totalRate.loadCategories($select.selected.id)"
+         >
+          <div ng-bind-html="_totalRate.trustAsHtml((speciality.name | highlight: $select.search)) "></div>
+         
+        </ui-select-choices>
+      </ui-select>
+    </div>
+    <div class="col-md-12" ng-repeat-start='category  in _totalRate.categories'>
+      <label class="h3">{{$index+3}}. შეაფასეთ {{category.name}}</label>
+    </div>
+    <div class="col-md-12" ng-repeat-end ng-controller="RatingController as rating">
+      <div star-rating custom-Model="category.rating" ng-model="rating.rating1" max="10" on-rating-select="rating.rateFunction(rating,category.rating)"></div>
+       <div><strong>Rating</strong> {{rating.rating1}}</div>
+    </div>
+    <div class="col-md-12 m-t-md" onclick="alert('I will be saved in future, I promise :P ')">
+        <button class="btn btn-default"> save rating</button>
+    </div>
+  </div>
+
+ 
+</div>
